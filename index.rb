@@ -20,3 +20,5 @@ end
 SyncPackage.start(ARGV)
 
 # ruby index.rb sync /Users/feizheng/github/next-absolute-package
+# thor install index.rb
+# thor sync_package:sync /Users/feizheng/github/next-absolute-package
