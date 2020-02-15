@@ -8,7 +8,7 @@
     "email": "1290657123@qq.com"
   },
   "scripts": {
-    "start": "./index.rb"
+    "build": "thor install src/index.rb"
   },
   "license": "MIT",
   "publishConfig": {
