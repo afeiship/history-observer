@@ -8,7 +8,7 @@ class SyncPackage < Thor
 
   def sync(dir)
     FileUtils.cd(dir, :verbose => true) do
-      system "npm-check -y"
+      system "ncu -u"
       system "npm version patch --no-git-tag-version --force"
       system "git add --all"
       system "git commit -m 'feat: update all packages to latest'"
