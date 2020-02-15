@@ -1,0 +1,17 @@
+{
+  "name": "@feizheng/sync-package",
+  "version": "1.0.0",
+  "description": "Sync package to latest.",
+  "homepage": "https://github.com/afeiship",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "start": "./index.rb"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
