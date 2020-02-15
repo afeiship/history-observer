@@ -18,3 +18,5 @@ class SyncPackage < Thor
 end
 
 SyncPackage.start(ARGV)
+
+# ruby index.rb sync /Users/feizheng/github/next-absolute-package
