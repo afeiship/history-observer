@@ -13,8 +13,6 @@ thor sync_package:sync .
 ## example
 ```rb
 #!/usr/bin/env ruby
-
-require "json"
 require "fileutils"
 
 dir = "/Users/feizheng/github"
