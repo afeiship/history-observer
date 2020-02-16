@@ -15,6 +15,7 @@ thor sync_package:sync .
 #!/usr/bin/env ruby
 
 require "fileutils"
+require "json"
 
 dir = "/Users/feizheng/github"
 files = Dir["#{dir}/next-*"]
