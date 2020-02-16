@@ -13,14 +13,23 @@ thor sync_package:sync .
 ## example
 ```rb
 #!/usr/bin/env ruby
+
 require "fileutils"
 
 dir = "/Users/feizheng/github"
+files = Dir["#{dir}/next-*"]
 
 # today's task
-Dir["#{dir}/next-*"].each do |item|
-  puts "udpate project: #{item}"
+files.each_with_index do |item, index|
+  # puts "udpate project: #{item}"
+  pkg = JSON.parse(File.read("#{item}/package.json"))
+
+  next if pkg["dependencies"].nil?
+  next if pkg["dependencies"]["@feizheng/next-js-core2"].include?("2.4.")
+
   FileUtils.cd(item, :verbose => true) do
+    puts "#{index}/#{files.size}"
+
     system "rm -rf node_modules"
     system "thor sync_package:sync ."
     system "npm publish --access=public"
