@@ -15,6 +15,10 @@ class SyncPackage < Thor
       system "git push"
     end
   end
+
+  def self.exit_on_failure?
+    0
+  end
 end
 
 SyncPackage.start(ARGV)
