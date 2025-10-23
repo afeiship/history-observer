@@ -13,11 +13,23 @@ yarn add @jswork/history-observer
 
 ## usage
 ```js
-import HistoryObserver from '@jswork/history-observer';
+import historyObserver from '@jswork/history-observer';
 
-HistoryObserver(1024);
+// 监听所有实际发生的 URL 变化（默认行为：仅当 oldURL !== newURL 时触发）
+const unsubscribe = historyObserver.subscribe(({ type, oldURL, newURL }) => {
+  console.log(`Navigation type: ${type}`);
+  console.log(`From: ${oldURL}`);
+  console.log(`To:   ${newURL}`);
+});
 
-// [1000, 0, 20, 4]
+// 示例：触发 pushState（会触发回调）
+history.pushState(null, '', '/page1');
+
+// 示例：重复设置相同 URL（不会触发回调，因 URL 未变）
+history.pushState(null, '', '/page1');
+
+// 手动取消监听
+// unsubscribe();
 ```
 
 ## license
