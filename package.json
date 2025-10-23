@@ -1,7 +1,6 @@
 {
   "name": "@jswork/history-observer",
   "version": "1.0.0",
-  "private": true,
   "description": "Observe and react to browser history changes.",
   "npmClient": "pnpm",
   "main": "dist/index.cjs.js",
