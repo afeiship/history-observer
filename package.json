@@ -1,6 +1,6 @@
 {
   "name": "@jswork/history-observer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Observe and react to browser history changes.",
   "npmClient": "pnpm",
   "main": "dist/index.cjs.js",
@@ -38,8 +38,11 @@
   },
   "homepage": "https://js.work",
   "keywords": [
-    "@jswork/history-observer",
-    "number",
-    "num"
+    "hashchange",
+    "history",
+    "observe",
+    "popstate",
+    "replacestate",
+    "urlchange"
   ]
 }
