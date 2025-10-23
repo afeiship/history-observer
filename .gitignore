@@ -4,7 +4,9 @@ coverage
 npm-debug.log
 yarn.lock
 package-lock.json
-Gemfile.lock
+pnpm-lock.yaml
+
 .DS_Store
 .idea
 .vscode
+dist

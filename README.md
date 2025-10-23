@@ -1,45 +1,36 @@
-# sync-package
-> Sync package to latest.
+# history-observer
+> Observe and react to browser history changes.
+
+[![version][version-image]][version-url]
+[![license][license-image]][license-url]
+[![size][size-image]][size-url]
+[![download][download-image]][download-url]
+
+## installation
+```shell
+yarn add @jswork/history-observer
+```
 
 ## usage
-```shell
-thor sync_package:sync /Users/feizheng/github/next-absolute-package
+```js
+import HistoryObserver from '@jswork/history-observer';
 
-# or 
-cd /Users/feizheng/github/next-absolute-package
-thor sync_package:sync .
+HistoryObserver(1024);
+
+// [1000, 0, 20, 4]
 ```
 
-## example
-```rb
-#!/usr/bin/env ruby
+## license
+Code released under [the MIT license](https://github.com/afeiship/@jswork/history-observer/blob/master/LICENSE.txt).
 
-require "fileutils"
-require "json"
+[version-image]: https://img.shields.io/npm/v/@jswork/history-observer
+[version-url]: https://npmjs.org/package/@jswork/history-observer
 
-dir = "/Users/feizheng/github"
-files = Dir["#{dir}/next-*"]
+[license-image]: https://img.shields.io/npm/l/@jswork/history-observer
+[license-url]: https://github.com/afeiship/@jswork/history-observer/blob/master/LICENSE.txt
 
-# today's task
-files.each_with_index do |item, index|
-  # puts "udpate project: #{item}"
-  pkg = JSON.parse(File.read("#{item}/package.json"))
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/history-observer
+[size-url]: https://github.com/afeiship/@jswork/history-observer/blob/master/dist/@jswork/history-observer.min.js
 
-  next if pkg["dependencies"].nil?
-  next if pkg["dependencies"]["@feizheng/next-js-core2"].include?("2.4.")
-
-  FileUtils.cd(item, :verbose => true) do
-    puts "#{index}/#{files.size}"
-
-    system "rm -rf node_modules"
-    system "thor sync_package:sync ."
-    system "npm publish --access=public"
-  end
-end
-```
-
-
-## resources
-- https://www.npmjs.com/package/npm-check-updates
-- http://whatisthor.com/
-- https://github.com/afeiship/thor-notes
+[download-image]: https://img.shields.io/npm/dm/@jswork/history-observer
+[download-url]: https://www.npmjs.com/package/@jswork/history-observer
